@@ -6,6 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>三江中学九年级一班毕业啦 </title>
   <style>
+    #tab{
+      position: absolute;
+      z-index: 2;
+      top: 1500px;
+    }
     *{
       padding: 0;
       margin: 0;
@@ -13,6 +18,8 @@
     body{
       background-color: rgba(166, 55, 130, 1);
       height:500px;
+      background-image: 
+      font-family: Arial, sans-serif;
     }
     #t_head{
       background-color: rgba(72, 83, 201, 1)
@@ -59,15 +66,45 @@
     #laoshi{
       position: absolute;
       top: 1260px;
-      height: 600px;
+      height: 480px;
       width: 500px;
       background-color: orange;
     }
-    
+    .date-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+#current-date {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#days-away {
+    font-size: 18px;
+    color: #999;
+}
+    #sports{
+      position: absolute;
+      z-index: 2;
+      top: 1600px;
+      left: 10px;
+    }
+    #sports > h1{
+      color: #C33DF0;
+    }
+    #sports > img{
+      height:160px;
+      border-left: 0px;
+    }
   </style>
 </head>
 
-<body>
+<body bgcolor="pink">
+  <div class="date-container">
+        <p id="current-date"></p>
+        <p id="days-away"></p>
+    </div>
   <div id="laoshi">
     <details>
       <summary>老师</summary>
@@ -174,6 +211,26 @@
   <div><p>7. 毕业了，让我们带着满满的祝福，勇敢地迈向未来。</p></div>
   <div><p>8. 虽然我们即将分别，但班级的点点滴滴将永远镌刻在记忆中。</p></div>
   </div>
+  <div id="sports">
+    <h1>运动会图片</h1>
+    <img src="./pictures/b.jpg">
+    <img src="./pictures/c.jpg">
+    <img src="./pictures/d.jpg">
+    <img src="./pictures/e.jpg">
+    <img src="./pictures/f.jpg">
+    <img src="./pictures/g.jpg">
+    <img src="./pictures/h.jpg">
+    <img src="./pictures/i.jpg">
+    <img src="./pictures/j.jpg">
+    <img src="./pictures/k.jpg">
+    <img src="./pictures/l.jpg">
+    <img src="./pictures/m.jpg">
+    <img src="./pictures/n.jpg">
+    <img src="./pictures/o.jpg">
+    <img src="./pictures/r.jpg">
+    <img src="./pictures/q.jpg">
+  </div>
+ 
   
   <script>
     document.querySelector('#toggle-btn').addEventListener('click', function() {
@@ -188,8 +245,26 @@
           text.style.textOverflow = 'ellipsis';
       }
     });
+    
+  function getDaysBetweenDates(date1, date2) {
+    const oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
+    const diffDays = Math.round(Math.abs((date1 - date2) / oneDay));
+    return diffDays;
+}
+
+function displayCurrentDateAndDaysAway() {
+    const currentDate = new Date();
+    const currentDateString = currentDate.toLocaleDateString();
+    document.getElementById('current-date').innerText = `今天是：${currentDateString}`;
+
+    const targetDate = new Date('2024-6-17'); // 设置目标日期
+    const daysAway = getDaysBetweenDates(currentDate, targetDate);
+    document.getElementById('days-away').innerText = `距离目标中考还有 ${daysAway} 天`;
+}
+
+displayCurrentDateAndDaysAway();  
   </script>
   
 </body>
 
-</html>
+  </html>
