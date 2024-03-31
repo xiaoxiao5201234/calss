@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 
@@ -97,10 +98,37 @@
       height:160px;
       border-left: 0px;
     }
+        
+        #sd {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+        #sd li{
+            float: left;
+        }
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        li a:hover {
+            background-color: #111;
+        }
   </style>
 </head>
 
 <body bgcolor="pink">
+  <ul id="sd">
+        <li><a href="#home">首页</a></li>
+        <li><a href="#news">新闻</a></li>
+        <li><a href="#contact">联系我们</a></li>
+        <li><a href="#pict">运动会图片</a></li>
+    </ul>
   <div class="date-container">
         <p id="current-date"></p>
         <p id="days-away"></p>
@@ -212,7 +240,7 @@
   <div><p>8. 虽然我们即将分别，但班级的点点滴滴将永远镌刻在记忆中。</p></div>
   </div>
   <div id="sports">
-    <h1>运动会图片</h1>
+    <h1 id="pict">运动会图片</h1>
     <img src="./pictures/b.jpg">
     <img src="./pictures/c.jpg">
     <img src="./pictures/d.jpg">
